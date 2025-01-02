@@ -40,7 +40,6 @@ fi
 if [[ $(zsh --version) != zsh* ]]; then
 	echo "zsh is not installed."
 	# brew install zsh
-	# chsh -s $(which zsh)
 	exit 1
 else
 	echo -e "zsh installed ${GREEN}OK${NC}"
@@ -50,6 +49,7 @@ fi
 # echo $SHELL
 if [[ $(echo $SHELL | tail -c 4) != "zsh" ]]; then
 	echo "zsh is not the configured shell"
+	# chsh -s $(which zsh)
 	exit 1
 else
 	echo -e "zsh configured as shell ${GREEN}OK${NC}"
